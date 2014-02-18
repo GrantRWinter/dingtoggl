@@ -12,8 +12,9 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require_tree .
 
 // added requirements for this project
-//= require bootstrap
+// require bootstrap
 //= require angular
+
+//= require_tree .

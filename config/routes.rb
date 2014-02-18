@@ -1,4 +1,9 @@
 Dingtoggl::Application.routes.draw do
+
+  resources :entries, only: [:new, :create, :edit, :destroy]
+  resource :dashboard, only: [:show], controller: 'dashboard'
+
+  root to: 'dashboard#show'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
