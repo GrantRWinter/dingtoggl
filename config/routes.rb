@@ -1,6 +1,6 @@
 Dingtoggl::Application.routes.draw do
 
-  resources :entries, only: [:new, :create, :edit, :destroy]
+  resources :entries, only: [:new, :create, :edit, :destroy, :index]
   resource :dashboard, only: [:show], controller: 'dashboard'
 
   root to: 'dashboard#show'
