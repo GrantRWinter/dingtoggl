@@ -1,7 +1,9 @@
-<div ng-controller="EntriesCtrl">
-  <h1>{{ title }}</h1>
-  <div class="row" ng-repeat="entries in data.entries">
-    <h2><a ng-click="entries">Project Name: {{ entries.project }}</a></h2>
-    <p>Date: {{ entries.date }} Hours: {{ entries.hours }} User: {{ entires.user_id }} Comment: {{ entries.comment }}<p>
-  </div>
+<div ng-app='timeApp'>
+	<div ng-controller="EntriesCtrl">
+	  <h1>{{ title }}</h1>
+	  <div class="row" ng-repeat="entries in data.entries">
+	    <h2><a ng-click="entries">Project Name: {{ entries.project }}</a></h2>
+	    <p>Date: {{ entries.date }} Hours: {{ entries.hours }} User: {{ entires.user_id }} Comment: {{ entries.comment }}<p>
+	  </div>
+	</div>	
 </div>
