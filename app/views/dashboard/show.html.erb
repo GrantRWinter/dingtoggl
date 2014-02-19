@@ -1,6 +1,13 @@
 <div ng-app='timeApp'>
 	<div ng-controller="EntriesCtrl">
 	  <h1>{{ title }}</h1>
+	  <form ng-submit="saveEntry()">
+	  	Comment: <input type="text" ng-model="newEntry.comment" /> <br/>
+	  	Hours: <input type="number" ng-model="newEntry.hours" /> <br/>
+	  	Project: <input type="text" ng-model="newEntry.project" /> <br/>
+	  	<input type="submit" value="Add Entry" />
+	  </form>
+	  <hr/>
 	  <div class="row" ng-repeat="entry in entries">
 	    <h2>Project Name: {{ entry.project }}</h2>
 	    <p>Date: {{ entry.date }} Hours: {{ entry.hours }} User: {{ entry.user_id }} Comment: {{ entry.comment }}<p>
