@@ -5,3 +5,7 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+entries = Entries.create([{ project: "TA", comment: "had to stay late by half hour", date: "sunday the 1st", hours: 2.0, user_id: 2 },
+  { project: "TA", comment: "Understaffed", date: "sat", hours: 5.0, user_id: 2 },
+  { project: "HTML500", comment: "None", date: "wed", hours: 1.0, user_id: 2 },
+  { project: "TA", comment: "None", date: "tues", hours: 5.0, user_id: 2 }])
