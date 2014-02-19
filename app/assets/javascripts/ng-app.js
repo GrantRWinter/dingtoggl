@@ -11,7 +11,7 @@ timeApp.controller("EntriesCtrl", function($scope, $resource) {
 	
 	$scope.saveEntry = function() {
 		// use the Entry to POST an entry to the Rails app
-		alert('you tried to save an entry with comment: ' + $scope.newEntry.comment);
+		console.log('you tried to save an entry with comment: ' + $scope.newEntry.comment);
 	}
 
 });
