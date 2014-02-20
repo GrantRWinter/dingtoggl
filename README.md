@@ -1,0 +1,1 @@
+This open source application is "DingToggl" (working title), a rails/angular js app that allows for time keeping of employee and contractor time on the job. Work in progress. 
