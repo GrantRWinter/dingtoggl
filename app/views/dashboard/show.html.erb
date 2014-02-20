@@ -24,11 +24,11 @@
 	  <h2>Select Date Range:<h2>
 	  <form>
 	  	<p>
-	  		Date From: <input type="date" ng-model="date_query" />
-	  		Date To: <input type="date" ng-model="date_query" />
+	  		Date From: <input type="date" ng-model="from_date" />
+	  		Date To: <input type="date" ng-model="to_date" />
 	  	</p>
 	  </form>
-	  <div class="row" ng-repeat="entry in view.entries | filter:date_query">
+	  <div class="row" ng-repeat="entry in view.entries | filter:dateFilter">
 	    <h2>Project Name: {{ entry.project }}</h2>
 	    <form>
 		    	<p>

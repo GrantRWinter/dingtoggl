@@ -20,6 +20,10 @@ timeApp.controller("EntriesCtrl", ['$scope', '$resource', function entriesCtrl($
 		view.newEntry = {};
 	};
 
+	$scope.dateFilter = function(entry) {
+		return( entry.date > $scope.from_date && entry.date < $scope.to_date)
+	}
+
 	$scope.save = function save(entry)
 	{
 		console.log(entry);
