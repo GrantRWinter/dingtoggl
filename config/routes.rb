@@ -1,6 +1,6 @@
 Dingtoggl::Application.routes.draw do
 
-  resources :entries, only: [:new, :create, :edit, :destroy, :index], defaults: {format: :json}
+  resources :entries, only: [:create, :update, :destroy, :index], defaults: {format: :json}
   resource :dashboard, only: [:show], controller: 'dashboard'
 
   root to: 'dashboard#show'
