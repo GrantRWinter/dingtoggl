@@ -13,6 +13,7 @@ class EntriesController < ApplicationController
 
   def update
     respond_with Entries.update(params[:id], entry_params)
+    
   end
 
   def destroy
