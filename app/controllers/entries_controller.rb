@@ -13,7 +13,7 @@ class EntriesController < ApplicationController
 
   def update
     respond_with Entries.update(params[:id], entry_params)
-    
+
   end
 
   def destroy
@@ -23,7 +23,7 @@ class EntriesController < ApplicationController
   protected
 
   def entry_params
-    params.require(:entry).permit(:user_id, :comment, :hours, :date, :project)
+    params.require(:entry).permit(:user_id, :comment, :hours, :minutes, :date, :project)
   end
 
 end

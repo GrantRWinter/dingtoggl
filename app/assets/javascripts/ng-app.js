@@ -15,8 +15,8 @@ timeApp.controller("EntriesCtrl", ['$scope', '$resource', function entriesCtrl($
 
 	$scope.addEntry = function addEntry()
 	{
-	  entryResource.save(view.newEntry)
-		view.entries.push(view.newEntry)
+		entryResource.save(view.newEntry);
+		view.entries.push(view.newEntry);
 		view.newEntry = {};
 	};
 
@@ -33,7 +33,7 @@ timeApp.controller("EntriesCtrl", ['$scope', '$resource', function entriesCtrl($
 		res
 		.then(function(entry)
 		{
-			console.log("Great success", arguments);
+			console.log("success", arguments);
 		})
 		.catch(function(error)
 		{

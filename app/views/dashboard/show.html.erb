@@ -1,21 +1,41 @@
 <div ng-app='timeApp'>
 	<div ng-controller="EntriesCtrl">
 	  <h1>{{ view.title }}</h1>
+	  <div>
+	  	<h1>Hours worked Today + {{ view.newEntry.hours * 60 | date:'mm' }} </h1>
+	  	<h1></h1>
+	  </div>
+	  <div>
+	  	<h1>Hours worked This week</h1>
+	  	<h1></h1>
+	  </div>
+	  <div>
+	  	<h1>Hours to date</h1>
+	  </div>	
 	  <form ng-submit="addEntry()">
-	  	Comment: <input type="text" ng-model="view.newEntry.comment" /> 
-	  	Hours: <input type="number" ng-model="view.newEntry.hours" /> 
+	  	Comment: <input type="text" value="none" ng-model="view.newEntry.comment" /> 
+	  	Hours: <input type="number"  ng-model="view.newEntry.hours" /> 
+	  	Minutes: <input type="number" ng-model="view.newEntry.minutes" />
 	  	Project: <input type="text" ng-model="view.newEntry.project" /> 
-	  	Date: <input type="datetime" ng-model="view.newEntry.date" />
+	  	Date: <input type="date" ng-model="view.newEntry.date" />
 	  	<input type="submit" value="Add Entry" />
 	  </form>
 	  <hr/>
-	  <div class="row" ng-repeat="entry in view.entries">
+	  <h2>Select Date Range:<h2>
+	  <form>
+	  	<p>
+	  		Date From: <input type="date" ng-model="date_query" />
+	  		Date To: <input type="date" ng-model="date_query" />
+	  	</p>
+	  </form>
+	  <div class="row" ng-repeat="entry in view.entries | filter:date_query">
 	    <h2>Project Name: {{ entry.project }}</h2>
 	    <form>
 		    	<p>
 		    		Date:    <input type="datetime" ng-model="entry.date" />
-		    		Hours:   <input type="number" 	ng-model="entry.hours" />
-		    		User:    <input type="number" 	ng-model="entry.user_id" />
+		    		Hours:   <input type="number"	ng-model="entry.hours" />
+		    		Minutes: <input type="number"   ng-model="entry.minutes" />
+		    		Project: <input type="text" 	ng-model="entry.project" />
 		    		Comment: <input type="text" 		ng-model="entry.comment" />
 
 		    	<input type="submit" value="Save" ng-click="entry.$update()" /> 
