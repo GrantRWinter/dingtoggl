@@ -1,7 +1,7 @@
-<h1>Admin#index</h1>
+<h1>Administration Page</h1>
 
-<% @entries.each do |entry| %>
-  <%= entry.project %>
-<% end %>
+<h3><% @entries.each do |entry| %>
+  <div>Project: <%= entry.project %> Comment: <%= entry.comment %> Hours: <%= entry.hours %> Minutes: <%= entry.minutes %> Date: <%= entry.date %> </div>
+<% end %></h3>
 
 <p>Find me in app/views/admin/index.html.erb</p>
