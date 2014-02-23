@@ -10,29 +10,40 @@ timeApp.controller("EntriesCtrl", ['$scope', '$resource', function entriesCtrl($
 	view.entries = entryResource.query();
   view.newEntry = {};	
 
-	$scope.addEntry = function addEntry()
-	{
+	$scope.addEntry = function addEntry() {
 		entryResource.save(view.newEntry);
 		view.entries.push(view.newEntry);
-		debugger
 		view.newEntry = {};
 	};
 
-	function daySum() {
+
+
+	$scope.total_today = function total_today () {
 		var totalHours = 0;
 		for(var i=0; i<view.entries.length; i++){
-			totalHours = totalHours + view.entries[i].hours
+			if (view.entries.date == Date()) {
+				debugger
+			  totalHours = totalHours + view.entries[i].hours;
+		  }else{
+			totalHours = 0;
+		}
+		}
+		
+		return totalHours;
+	};
+
+	$scope.total = function total () {
+		var totalHours = 0;
+		for(var i=0; i<view.entries.length; i++){
+			totalHours = totalHours + view.entries[i].hours;
+			
 		}
 		return totalHours;
-	}
+	};
 
-	$scope.add = function(value) {
-		$scope.revenues.push({amount: parsInt(value) });
-	}
 
-	$scope.$watchCollection("entries", function() {
-		$scope.daySum = daySum();
-	});
+
+
 	
 	// $scope.hoursToday = function(entry) {
 	// 	if (entry.date == Date()){

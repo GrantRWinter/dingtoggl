@@ -17,11 +17,11 @@
     </nav>
 	  
 	  <div>
-	  	<h1>Hours worked Today + {{ view.newEntry.hours * 60 }} </h1>
+	  	<h1>Hours worked Today: {{ total_today() }} </h1>
 	  	<h1></h1>
 	  </div>
     <div>
-      <h1>Hours worked Today + {{ daySum }} </h1>
+      <h1>Hours to date: {{ total() }} </h1>
       <h1></h1>
     </div>
 	  <div>
