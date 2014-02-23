@@ -6,22 +6,60 @@ timeApp.controller("EntriesCtrl", ['$scope', '$resource', function entriesCtrl($
 	var entryResource = $resource("/entries/:id", {id: '@id'}, {update: {method: "PUT"}});
 	var view = $scope.view = {};
 
-	view.title = "Lighthouse TT App";
+	view.title = "Lighthouse ClockTower";
 	view.entries = entryResource.query();
-	console.log($scope.data);
-  view.newEntry = {};
-
-	var answer = 42;	
+  view.newEntry = {};	
 
 	$scope.addEntry = function addEntry()
 	{
 		entryResource.save(view.newEntry);
 		view.entries.push(view.newEntry);
+		debugger
 		view.newEntry = {};
 	};
 
+	function daySum() {
+		var totalHours = 0;
+		for(var i=0; i<view.entries.length; i++){
+			totalHours = totalHours + view.entries[i].hours
+		}
+		return totalHours;
+	}
+
+	$scope.add = function(value) {
+		$scope.revenues.push({amount: parsInt(value) });
+	}
+
+	$scope.$watchCollection("entries", function() {
+		$scope.daySum = daySum();
+	});
+	
+	// $scope.hoursToday = function(entry) {
+	// 	if (entry.date == Date()){
+
+	// 		// var todays_hours = 0
+	// 		// for (var i=0; i<entry.length; i++) {
+	// 		// 	todays_hours += entry[i].hours
+	// 		// }
+	// 		return entry.hours;
+	// 		console.log(entry.hours);
+	// 	}else{
+	// 		return 0
+	// 	}
+	// 	end
+
+	// }
+
+	// $scope.hoursWeek = function(entry) {
+
+	// }
+
+
 	$scope.dateFilter = function(entry) {
+	  if ($scope.hasOwnProperty("from_date") == false) $scope.from_date = "0000-01-01";
+	  if ($scope.hasOwnProperty("to_date") == false) $scope.to_date = Date();
 		return( entry.date > $scope.from_date && entry.date < $scope.to_date)
+
 	}
 
 	$scope.save = function save(entry)

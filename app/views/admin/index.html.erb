@@ -3,5 +3,5 @@
 <h3><% @entries.each do |entry| %>
   <div>Project: <%= entry.project %> Comment: <%= entry.comment %> Hours: <%= entry.hours %> Minutes: <%= entry.minutes %> Date: <%= entry.date %> </div>
 <% end %></h3>
-
-<p>Find me in app/views/admin/index.html.erb</p>
+<h3>Summary of Hours: <%= @sum_of_hours %></h3>
+<h3>Summary of Minutes: <%= @sum_of_mins %></h3>

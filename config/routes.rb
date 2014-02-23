@@ -1,5 +1,7 @@
 Dingtoggl::Application.routes.draw do
 
+  get "admin/index"
+  get "admin/show"
   resources :entries, only: [:create, :update, :destroy, :index], defaults: {format: :json}
   resource :dashboard, only: [:show], controller: 'dashboard'
 
