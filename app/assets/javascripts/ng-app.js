@@ -18,25 +18,23 @@ timeApp.controller("EntriesCtrl", ['$scope', '$resource', function entriesCtrl($
 
 
 
-	$scope.total_today = function total_today () {
-		var totalHours = 0;
-		for(var i=0; i<view.entries.length; i++){
-			if (view.entries.date == Date()) {
-				debugger
-			  totalHours = totalHours + view.entries[i].hours;
-		  }else{
-			totalHours = 0;
-		}
-		}
+	// $scope.totaltoday = function totaltoday () {
+	// 	var totalHours = 0;
 		
-		return totalHours;
-	};
+	// 	for(var i=0; i<view.entries.length; i++){
+	// 		if (view.entries[i].date == Date()) {
+	// 		  totalHours = totalHours + view.entries[i].hours;
+	// 	  }else{
+	// 		  totalHours = 0;
+	// 	}
+	// 	return totalHours;
+	// };
 
 	$scope.total = function total () {
 		var totalHours = 0;
 		for(var i=0; i<view.entries.length; i++){
 			totalHours = totalHours + view.entries[i].hours;
-			
+			debugger
 		}
 		return totalHours;
 	};
