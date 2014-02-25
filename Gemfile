@@ -36,6 +36,9 @@ end
 gem "pry"
 gem 'bootstrap-sass', '>= 3.0.0.0'
 
+# sorcery authentication gem
+gem 'sorcery'
+
 
 group :development, :test do
   gem "rspec-rails", "~> 2.14.0"
