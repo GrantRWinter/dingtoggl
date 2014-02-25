@@ -92,6 +92,7 @@ timeApp.controller("EntriesCtrl", ['$scope', '$resource', function entriesCtrl($
 	{
 		console.log(entry);
 		entry.$save();
+		debugger
 	}
 
 	$scope.delete = function(entry, idx)
