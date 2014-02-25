@@ -34,8 +34,9 @@ timeApp.controller("EntriesCtrl", ['$scope', '$resource', function entriesCtrl($
 		var totalHours = 0;
 		for(var i=0; i<view.entries.length; i++){
 			totalHours = totalHours + view.entries[i].hours;
-			debugger
 		}
+
+		
 		return totalHours;
 	};
 
@@ -65,10 +66,26 @@ timeApp.controller("EntriesCtrl", ['$scope', '$resource', function entriesCtrl($
 
 
 	$scope.dateFilter = function(entry) {
-	  if ($scope.hasOwnProperty("from_date") == false) $scope.from_date = "0000-01-01";
-	  if ($scope.hasOwnProperty("to_date") == false) $scope.to_date = Date();
-		return( entry.date > $scope.from_date && entry.date < $scope.to_date)
+		var today = new Date()
+	  var monthAgo = new Date()
+	  monthAgo.setMonth(today.getMonth() - 1)
 
+	  var toDate;
+	  var fromDate;
+
+	  if ($scope.hasOwnProperty("from_date") == false) {
+		  fromDate = monthAgo;
+		} else {
+			fromDate = new Date($scope.from_date)
+		}
+
+	  if ($scope.hasOwnProperty("to_date") == false) {
+	  	toDate = today;
+	  } else {
+	  	toDate = new Date($scope.to_date)
+	  }
+	  var entryDate = new Date(Date.parse(entry.date))
+		return( entryDate > fromDate &&  entryDate < toDate)
 	}
 
 	$scope.save = function save(entry)

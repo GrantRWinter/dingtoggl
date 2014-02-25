@@ -81,8 +81,9 @@
         <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span><span class="glyphicon glyphicon-time"></span><span class="glyphicon glyphicon-wrench"></span>
         </div> -->
 				<div class="row">
-          <div><p type="text"  ng-model="entry.date">{{entry.date}}</p><div>
-		  <div class="input-group input-group-lg form-field col-lg-2 col-lg-offest-1"> 
+          <div><p type="text"  ng-model="entry.date">{{entry.date}}</p></div>
+
+		      <div class="input-group input-group-lg form-field col-lg-2 col-lg-offest-1"> 
 		    		<p>Date:</p> <input class="form-control" type="text" class="form_control" ng-model="entry.date" />
           </div>
 
@@ -106,9 +107,9 @@
 		    	 <p>save</p> <input class="form-control btn btn-default btn-lg" type="submit" value="Save" ng-click="entry.$update()" /> 
 		    	 </div>
 
-           <div class="input-group input-group-lg form-field col-lg-1">
+          <div class="input-group input-group-lg form-field col-lg-1">
              <p>delete</p> <input class="form-control btn btn-default btn-lg" type="submit" value="Delete" ta-confirmatron="Are you sure?" ng-click="$parent.delete(entry, $index)" />
-           </div>
+          </div>
 	    	</div>
 <!-- <div class="row">
   <div class="col-lg-6">

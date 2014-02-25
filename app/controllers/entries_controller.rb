@@ -5,16 +5,6 @@ class EntriesController < ApplicationController
     respond_with(@entries) do |format|
       format.json { render :json => @entries.as_json }
     end
-    @sum_of_hours = 0
-    @sum_of_mins = 0
-    @hours_today = 0
-    @entries.each do |e|
-      @sum_of_mins += e.minutes.to_i
-      @sum_of_hours += e.hours.to_i
-      @hours_today += e.hours.to_i if e.date == Date.today.to_s
-    end
-
-    
   end
 
   def create
