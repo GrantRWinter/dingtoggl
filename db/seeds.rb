@@ -9,3 +9,4 @@ entries = Entries.create([{ project: "TA", comment: "had to stay late by half ho
   { project: "TA", comment: "Understaffed", date: "sat", hours: 5.0, user_id: 2 },
   { project: "HTML500", comment: "None", date: "wed", hours: 1.0, user_id: 2 },
   { project: "TA", comment: "None", date: "tues", hours: 5.0, user_id: 2 }])
+# users = User.create([{ email: "grantrwinter@gmail.com", }])

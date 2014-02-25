@@ -1,7 +1,14 @@
 Dingtoggl::Application.routes.draw do
 
+  get "sessions/new"
+  get "users/new"
   get "admin/index"
   get "admin/show"
+  get "logout" => "sessions#destroy", :as => "logout"
+  get "login" => "sessions#new", :as => "login"
+  get "signup" => "users#new", :as => "signup"
+  resources :users
+  resources :sessions
   resources :entries, only: [:create, :update, :destroy, :index], defaults: {format: :json}
   resource :dashboard, only: [:show], controller: 'dashboard'
 
