@@ -39,6 +39,10 @@ gem 'bootstrap-sass', '>= 3.0.0.0'
 # sorcery authentication gem
 gem 'sorcery'
 
+# user priveledge gem
+
+gem 'cancan'
+
 
 group :development, :test do
   gem "rspec-rails", "~> 2.14.0"

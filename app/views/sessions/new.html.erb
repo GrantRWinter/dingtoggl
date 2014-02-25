@@ -1,5 +1,6 @@
-<h1>Sessions#new</h1>
-<%= form_tag sessions_path %>
+<h1>Log in</h1>
+
+<%= form_tag sessions_path do %>
   <div class="field">
     <%= label_tag :email %>
     <%= text_field_tag :email, params[:email] %>
@@ -13,4 +14,4 @@
     <%= label_tag :remember_me %>
   </div>
   <div class="actions"><%= submit_tag "Log in" %></div>
-<% end %>  
+<% end %> 
