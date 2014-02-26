@@ -1,5 +1,7 @@
 class User < ActiveRecord::Base
 
+  has_many :entries
+
   authenticates_with_sorcery!
 
   #attr_accessible :email, :password, :password_confirmation

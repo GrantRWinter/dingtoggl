@@ -7,6 +7,10 @@ class EntriesController < ApplicationController
     end
   end
 
+  def new
+    @entries = @user.entries.build
+  end
+
   def create
     respond_with Entries.create(entry_params)
   end
@@ -23,7 +27,7 @@ class EntriesController < ApplicationController
   protected
 
   def entry_params
-    params.require(:entry).permit(:user_id, :comment, :hours, :minutes, :date, :project)
+    params.require(:entry).permit(:email, :comment, :hours, :minutes, :date, :project)
   end
 
 end

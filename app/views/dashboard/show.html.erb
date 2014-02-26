@@ -18,7 +18,7 @@
     </nav>
 	  
 	  <div>
-	  	<h1>Hours worked Today: {{ totaltoday() }} </h1>
+	  	<h1>Hours worked Today: {{ total_today() }} </h1>
 	  	<h1></h1>
 	  </div>
     <div>
@@ -26,12 +26,10 @@
       <h1></h1>
     </div>
 	  <div>
-	  	<h1>Hours worked This week</h1>
+	  	<h1>Hours worked This week: {{ total_week() }}</h1>
 	  	<h1></h1>
 	  </div>
-	  <div>
-	  	<h1>Hours to date</h1>
-	  </div>
+	  
 	  
 	  <form ng-submit="addEntry()">
   	  <div class="row">	
