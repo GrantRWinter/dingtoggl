@@ -41,12 +41,12 @@
 
   		  <div class="input-group input-group-lg form-field col-lg-1">
   		  	 <h3>Hours: </h3>
-  		  	 <input type="number" class="form-control" placeholder="0" ng-model="view.newEntry.hours" /> 
+  		  	 <input type="number" class="form-control" min="0" max="8" placeholder="0" ng-model="view.newEntry.hours" /> 
   		  </div>
 
   		  <div class="input-group input-group-lg form-field col-lg-1">
   		  	<h3>Minutes:</h3> 
-  		  	<input type="number" class="form-control bfh-number" placeholder="0" ng-model="view.newEntry.minutes" />
+  		  	<input type="number" class="form-control bfh-number" min="0" max="59" placeholder="0" ng-model="view.newEntry.minutes" />
   		  </div>
 
   		  <div class="input-group input-group-lg form-field col-lg-3">
@@ -73,7 +73,7 @@
 	  		Date To: <input style='display:inline;' type="date" ng-model="to_date" />
 	  	</h2>
   	</form>
-	  <div class="row" ng-repeat="entry in view.entries | filter:dateFilter">
+	  <div class="row" ng-repeat="entry in view.entries | orderBy: 'created_at':true | filter:dateFilter">
 	    <div class="col-md-10 col-md-offset-1">
         <!-- <div class="input-group input-group-lg col-lg-3">
           <input type="text" class="form-control">

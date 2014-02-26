@@ -76,6 +76,8 @@ timeApp.controller("EntriesCtrl", ['$scope', '$resource', function entriesCtrl($
 		}
 		return totalHours;
 	};
+
+
 	// Date filter for filtering date
 	$scope.dateFilter = function(entry) {
 		var today = new Date()
@@ -100,11 +102,14 @@ timeApp.controller("EntriesCtrl", ['$scope', '$resource', function entriesCtrl($
 		return( entryDate >= fromDate &&  entryDate <= toDate)
 	}
 
+
+ 
+
+
 	$scope.save = function save(entry)
 	{
 		console.log(entry);
 		entry.$save();
-		debugger
 	}
 
 	$scope.delete = function(entry, idx)
