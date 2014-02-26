@@ -8,5 +8,6 @@ class AdminController < ApplicationController
       @sum_of_hours += e.hours.to_f
       @sum_of_mins += e.minutes.to_f
     end
+    binding.pry
   end
 end

@@ -87,11 +87,11 @@
           </div>
 
           <div class="input-group input-group-lg form-field col-lg-1">
-		    		<p>Hours:</p><input class="form-control" type="number" ng-model="entry.hours" />
+		    		<p>Hours:</p><input class="form-control" min="0" max="8" type="number" ng-model="entry.hours" />
           </div>
 
           <div class="input-group input-group-lg form-field col-lg-1">
-		    		<p>Minutes:</p> <input class="form-control" type="number"   ng-model="entry.minutes" />
+		    		<p>Minutes:</p> <input class="form-control" min="0" max="59" type="number" ng-model="entry.minutes" />
           </div> 
 
           <div class="input-group input-group-lg form-field col-lg-2"> 
