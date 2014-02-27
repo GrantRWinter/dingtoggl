@@ -1,9 +1,13 @@
 Dingtoggl::Application.routes.draw do
 
+  namespace :admin do 
+    resources :users, only: [:show]
+    resource :dashboard, only: [:show], controller: 'dashboard'
+  end
   get "sessions/new"
   get "users/new"
-  get "admin/index"
-  get "admin/show"
+  # get "admin/index"
+  # get "admin/show"
   get "logout" => "sessions#destroy", :as => "logout"
   get "login" => "sessions#new", :as => "login"
   get "signup" => "users#new", :as => "signup"
