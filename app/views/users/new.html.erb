@@ -4,8 +4,8 @@
   <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
 </head>
 <body>
-  <div class="row enter_box">
-    <div class="col-lg-4 col-lg-offset-4">
+  <div class="row">
+    <form class="col-lg-4 col-lg-offset-4 enter_box">
       <h1>Kiss your evenings goodbye TA slave!</h1>
         <%= form_for @user do |f| %>
           <% if @user.errors.any? %>
@@ -18,21 +18,22 @@
               </ul>
             </div>
           <% end %>
-          <div class="field form-field">
+        <div class="field form-field">
           <div class="field form-group">
             <%= f.label :email %>
-            <%= f.text_field :email %>
+            <%= f.text_field :email, :class => "form-control" %>
           </div>
           <div class="field form-group">
             <%= f.label :password %>
-            <%= f.password_field :password %>
+            <%= f.password_field :password, :class => "form-control" %>
           </div>
           <div class="field form-group">
             <%= f.label :password_confirmation %>
-            <%= f.password_field :password_confirmation %>
+            <%= f.password_field :password_confirmation, :class => "form-control" %>
           </div>
           <div class="actions"><%= f.submit "submit", { :class => "btn btn-sucess"} %></div>
         <% end %>
       </div>
-    </div>
+    </form>
+  </div>
 </body>
