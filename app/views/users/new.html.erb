@@ -5,7 +5,7 @@
 </head>
 <body>
   <div class="row">
-    <form class="col-lg-4 col-lg-offset-4 enter_box">
+    <div class="col-lg-4 col-lg-offset-4 enter-box">
       <h1>Kiss your evenings goodbye TA slave!</h1>
         <%= form_for @user do |f| %>
           <% if @user.errors.any? %>
@@ -31,9 +31,9 @@
             <%= f.label :password_confirmation %>
             <%= f.password_field :password_confirmation, :class => "form-control" %>
           </div>
-          <div class="actions"><%= f.submit "submit", { :class => "btn btn-sucess"} %></div>
+          <div class="actions"><%= f.submit "submit", { :class => "btn btn-success"} %></div>
         <% end %>
       </div>
-    </form>
+    </div>
   </div>
 </body>

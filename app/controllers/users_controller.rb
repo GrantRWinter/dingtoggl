@@ -8,7 +8,7 @@ class UsersController < ApplicationController
     
     if @user.save
       session[:user_id] = @user.id
-      redirect_to login_url, :notice => "Signed up!"
+      redirect_to dashboard_path, :notice => "Signed up!"
     else
       render :new
     end

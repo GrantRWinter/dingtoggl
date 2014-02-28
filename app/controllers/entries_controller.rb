@@ -7,6 +7,10 @@ class EntriesController < ApplicationController
     end
   end
 
+  def show
+    @entries = Entries.find(params[:user_id])
+  end
+
   def new
     @entries = current_user.entries.build
   end
