@@ -14,7 +14,7 @@ timeApp.controller("EntriesCtrl", ['$scope', '$resource', function entriesCtrl($
 	var entryResource = $resource("/entries/:id", {id: '@id'}, {update: {method: "PUT"}});
 	var view = $scope.view = {};
 
-	view.title = "Lighthouse ClockTower";
+	view.title = "Clocktower";
 	view.entries = entryResource.query();
   view.newEntry = {};	
 

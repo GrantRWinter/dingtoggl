@@ -16,13 +16,31 @@
   position: relative;
 }
 
+.marquis {
+  float:left;
+  position: relative;
+}
+
 .clock-tower {
   float:right;
   margin-right: 50px;
+  height: 200px;
 }
 
 .animated{
   -webkit-animation-duration: 1s;
+}
+
+h1 {
+  font-family: "Arial Rounded MT Bold";
+}
+
+h2 {
+  font-family: "Arial Rounded MT Bold";
+}
+
+h3 {
+  font-family: "Arial Rounded MT Bold";
 }
 
 .enter-box {
@@ -53,13 +71,18 @@
 
 .time-box-text {
   color: white;
-  font-family: M"Arial Rounded MT Bold";
+  font-family: "Arial Rounded MT Bold";
 }
 
 .time-box {
   background-color: #293333;
   text-align: center;
   border-radius: 5px;
+}
+
+.title {
+  font-family: M"Arial Rounded MT Bold";
+  font-size: 10em;
 }
 
 @-webkit-keyframes fadeInRight {
