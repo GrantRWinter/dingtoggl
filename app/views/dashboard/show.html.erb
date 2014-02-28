@@ -50,7 +50,7 @@
 
   		  <div class="input-group input-group-lg form-field col-lg-3">
   		  	<h3>Project:</h3> 
-  		  	<input type="text" class="form-control" placeholder="TA" ng-model="view.newEntry.project" /> 
+  		  	<input type="text" value="stuff and such" class="form-control" ng-init="view.newEntry.project='TA'" ng-model="view.newEntry.project" /> 
   		  </div>
 
         <div class="input-group input-group-lg form-field col-lg-2">
@@ -66,44 +66,45 @@
 
 	  <hr/>
 	  
-	  <form>
-	  	<h2>
-        Select date Range: From <input  type="date" ng-model="from_date" />
-	  		To <input style='display:inline;' type="date" ng-model="to_date" />
-	  	</h2>
-  	</form>
+	  <div class="row">
+      <div class="col-lg-4 col-lg-offset-4">
+  	  	<p>
+          Select date Range: From <input  type="date" ng-model="from_date" />
+  	  		To <input style='display:inline;' type="date" ng-model="to_date" />
+  	  	</p>
+  	</div>
+
+    
 
 	  <div class="row" ng-repeat="entry in view.entries | orderBy: 'created_at':true | filter:dateFilter">
 	    <div class="col-md-10 col-md-offset-1">
 				<div class="row">
-          <div><p type="text"  ng-model="entry.date">{{entry.date}}</p></div>
-
-		      <div class="input-group input-group-lg form-field col-lg-2 col-lg-offest-1"> 
-		    		<p>Date:</p> <input class="form-control" type="text" class="form_control" ng-model="entry.date" />
+          <div class="input-group input-group-lg form-field col-lg-2 col-lg-offest-1"> 
+		    		<input class="form-control" type="text" class="form_control" ng-model="entry.date" />
           </div>
 
           <div class="input-group input-group-lg form-field col-lg-1">
-		    		<p>Hours:</p><input class="form-control" min="0" max="8" type="number" ng-model="entry.hours" />
+		    		<input class="form-control" min="0" max="8" type="number" ng-model="entry.hours" />
           </div>
 
           <div class="input-group input-group-lg form-field col-lg-1">
-		    		<p>Minutes:</p> <input class="form-control" min="0" max="59" type="number" ng-model="entry.minutes" />
+		    		<input class="form-control" min="0" max="59" type="number" ng-model="entry.minutes" />
           </div> 
 
           <div class="input-group input-group-lg form-field col-lg-2"> 
-		    		<p>Project:</p><input class="form-control" type="text"	ng-model="entry.project" />
+		    		<input class="form-control" type="text"	ng-model="entry.project" />
           </div>
 
           <div class="input-group input-group-lg form-field col-lg-2">  
-		    		<p>Comment:</p> <input class="form-control" type="text" 		ng-model="entry.comment" />   
+		    		<input class="form-control" type="text" 		ng-model="entry.comment" />   
 		    	</div>
 
 		    	<div class="input-group input-group-lg form-field col-lg-1">
-		    	 <p>save</p> <input class="form-control btn btn-default btn-lg" type="submit" value="Save" ng-click="entry.$update()" /> 
+		    	 <input class="form-control btn btn-default btn-lg" type="submit" value="Save" ng-click="entry.$update()" /> 
 		    	 </div>
 
           <div class="input-group input-group-lg form-field col-lg-1">
-             <p>delete</p> <input class="form-control btn btn-default btn-lg" type="submit" value="Delete" ta-confirmatron="Are you sure?" ng-click="$parent.delete(entry, $index)" />
+             <input class="form-control btn btn-default btn-lg" type="submit" value="Delete" ta-confirmatron="Are you sure?" ng-click="$parent.delete(entry, $index)" />
           </div>
 	    	</div>	    
 	  </div>

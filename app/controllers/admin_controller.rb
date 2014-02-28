@@ -1,7 +1,7 @@
 class AdminController < ApplicationController
 
   def index
-    @entries = Entries.all
+    @entries = Entry.all
     @sum_of_hours = 0
     @sum_of_mins = 0
     @entries.each do |e|

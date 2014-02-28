@@ -5,7 +5,8 @@
 
 </head>
 <body class="bg">
-<div>
+  <div class="row">
+    <div class="col-lg-4">
       <h1 class="marquis title animated rotateInDownLeft">Clocktower</h1>
     </div>
     <div class="row">
@@ -19,14 +20,15 @@
       </div>
       <div class="field">
         <%= label_tag :password%>
-        <%= password_field_tag :password, {}, :class => "form-control" %>
+        <%= password_field_tag :password, '', :class => "form-control" %>
       </div>
       <div class="field">
         <%= check_box_tag :remember_me, 1, params[:remember_me] %>
         <%= label_tag :remember_me %>
       </div>
-      <div class="actions"><%= submit_tag "Log in" %></div>
+      <div class="actions"><%= submit_tag "Log in", { :class => "btn btn-lg btn-success"} %></div>
     <% end %> 
+    </div>
     </div>
   </div>
 </body>
