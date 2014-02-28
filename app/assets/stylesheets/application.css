@@ -22,9 +22,11 @@
 }
 
 .clock-tower {
-  float:right;
+  float:left;
   margin-right: 50px;
-  height: 200px;
+  height: 100px;
+  display: inline-block;
+  margin-top:1.3%;
 }
 
 .animated{
@@ -44,10 +46,10 @@ h3 {
 }
 
 .enter-box {
-  background-color: lightblue;
+  background-color: grey;
   border-radius: 5px;
   padding: 10px;
-  margin-top: 1%;
+  margin-top: 15%;
 }
 
 .head-button {
@@ -56,7 +58,7 @@ h3 {
 }
 
 .bg {
-  background-image:url('bigben.png');
+  background-image:url('bigben3.jpg');
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -65,7 +67,8 @@ h3 {
 }
 
 .time {
-  font-size: 5em;
+  font-size: 3em;
+  color: white;
   font-family: "Arial Rounded MT Bold";
 }
 
@@ -81,11 +84,21 @@ h3 {
 }
 
 .title {
-  font-family: M"Arial Rounded MT Bold";
-  font-size: 5em;
-  v1 {
-    color: blue;
-  }
+  font-family: "Arial Rounded MT Bold";
+  font-size: 11em;
+  color: #293333;
+  display:inline-block;
+  float:left;
+}
+
+.ap-title {
+  font-family: "Arial Rounded MT Bold";
+  font-size:3em;
+  color: #293333;
+}
+
+.navbar-default {
+background-color: #FFFFEB
 }
 
 @-webkit-keyframes fadeInRight {

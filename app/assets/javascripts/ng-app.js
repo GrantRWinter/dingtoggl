@@ -57,13 +57,6 @@ timeApp.controller("EntriesCtrl", ['$scope', '$resource', function entriesCtrl($
 		var totalHours = 0;
 		for(var i=0; i<view.entries.length; i++){ 
 			var entriesDayParsed = customParseDate( view.entries[i].date );
-			console.log("hello" + entriesDayParsed);
-			console.log(moment().format("MMM Do YY"))
-			console.log(moment() + "yuppers");
-			console.log(moment(entriesDayParsed).format("MMM Do YY") + " other-day");
-			console.log(moment().format("MMM Do YY"))
-			console.log(moment().calendar());
-
 			if ( 
 					//moment().format("MMM Do YY") == moment(entriesDayParsed).format("MMM Do YY")
 					// todayFullDate.getYear() == entriesDayParsed.getYear() &&
@@ -74,6 +67,7 @@ timeApp.controller("EntriesCtrl", ['$scope', '$resource', function entriesCtrl($
 				totalHours = totalHours + view.entries[i].hours;
 			}
 		}
+		
 		return totalHours;
 	};
 

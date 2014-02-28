@@ -1,18 +1,17 @@
 class EntriesController < ApplicationController
   respond_to :json
   def index
-    @entries = Entries.find(params[:id])
+    @entries = Entries.all
     respond_with(@entries) do |format|
-      format.json { render :json => @entries.as_json }
-      binding.pry
+      format.json { render :json => @entries.as_json } 
     end
   end
 
   
 
-  def new
-    @entries = current_user.entries.build
-  end
+  # def new
+  #   @entries = current_user.entries.build
+  # end
 
   def create
     new_params = entry_params

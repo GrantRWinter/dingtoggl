@@ -1,20 +1,17 @@
 <div ng-app='timeApp'>
 	<div ng-controller="EntriesCtrl">
-	  <nav class="navbar navbar-default" role="navigation">
+	  <nav class="navbar navbar-default navbar-color" role="navigation">
       <div class="container-fluid">
         <div class="navbar-header">
-          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-          <span class="sr-only">Toggle navigation</span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          </button>
+          
         </div>
-      <div class="marquis title">
-        <h1 class="title animated rotateInDownLeft">{{ view.title }}</h1>
+      
+      <h1 class="title animated rotateInDownLeft">{{ view.title }}</h1>
+      <img class="clock-tower animated fadeInRight" src="/assets/clocktower.gif" />
+      
+      
       </div>
-      </div>
-      <div><img class="clock-tower animated fadeInRight" src="/assets/clockTower_logo.png" /></div>
+      
     </nav>
 
 	  <div class="row">
@@ -71,16 +68,13 @@
 	  
 	  <form>
 	  	<h2>
-        Filter by date:	Date From: <input  type="date" ng-model="from_date" />
-	  		Date To: <input style='display:inline;' type="date" ng-model="to_date" />
+        Select date Range: From <input  type="date" ng-model="from_date" />
+	  		To <input style='display:inline;' type="date" ng-model="to_date" />
 	  	</h2>
   	</form>
+
 	  <div class="row" ng-repeat="entry in view.entries | orderBy: 'created_at':true | filter:dateFilter">
 	    <div class="col-md-10 col-md-offset-1">
-        <!-- <div class="input-group input-group-lg col-lg-3">
-          <input type="text" class="form-control">
-        <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span><span class="glyphicon glyphicon-time"></span><span class="glyphicon glyphicon-wrench"></span>
-        </div> -->
 				<div class="row">
           <div><p type="text"  ng-model="entry.date">{{entry.date}}</p></div>
 
@@ -111,26 +105,7 @@
           <div class="input-group input-group-lg form-field col-lg-1">
              <p>delete</p> <input class="form-control btn btn-default btn-lg" type="submit" value="Delete" ta-confirmatron="Are you sure?" ng-click="$parent.delete(entry, $index)" />
           </div>
-	    	</div>
-<!-- <div class="row">
-  <div class="col-lg-6">
-    <div class="input-group">
-      <span class="input-group-btn">
-        <button class="btn btn-default" type="button">Go!</button>
-      </span>
-      <input type="text" class="form-control">
-    </div>
-  </div>
-  <div class="col-lg-6">
-    <div class="input-group">
-      <input type="text" class="form-control">
-      <span class="input-group-btn">
-        <button class="btn btn-default" type="button">Go!</button>
-      </span>
-    </div>
-  </div>
-</div> -->
-	    
+	    	</div>	    
 	  </div>
 	</div>	
 </div>
