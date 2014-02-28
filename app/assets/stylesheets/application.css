@@ -30,7 +30,6 @@
   border-radius: 5px;
   padding: 10px;
   margin-top: 1%;
-
 }
 
 .head-button {
@@ -38,7 +37,30 @@
   margin: 1%;
 }
 
+.bg {
+  background-image:url('bigben.png');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  width:100%;
+}
 
+.time {
+  font-size: 5em;
+  color: white;
+  font-family: "Arial Rounded MT Bold";
+}
+
+.time-box-text {
+  color: white;
+  font-family: M"Arial Rounded MT Bold";
+}
+
+.time-box {
+  background-color: #293333;
+  text-align: center;
+  border-radius: 5px;
+}
 
 @-webkit-keyframes fadeInRight {
   0% {
