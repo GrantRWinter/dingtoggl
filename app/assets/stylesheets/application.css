@@ -11,7 +11,10 @@
  *= require_self
  *= require_tree .
  */
-
+.admin-table {
+  border: 3px solid black;
+  margin-left: 2%;
+}
 
 .form-field {
   display: inline-block;
@@ -112,10 +115,6 @@ h3 {
 .navbar-default {
 background-color: #cfd27d;
 }
-
-/*.background- {
-  background-color:#FFFFEB;
-}*/
 
 @-webkit-keyframes fadeInRight {
   0% {
