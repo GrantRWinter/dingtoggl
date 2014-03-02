@@ -18,6 +18,8 @@
   position: relative;
 }
 
+
+
 .marquis {
   float:left;
   position: relative;
@@ -73,7 +75,7 @@ h3 {
 }
 
 .app-background {
-  background-color: #7583A6;
+  background-color: #e0eece;
 }
 
 .time {
@@ -108,7 +110,7 @@ h3 {
 }
 
 .navbar-default {
-background-color: #C8F6FA;
+background-color: #cfd27d;
 }
 
 /*.background- {

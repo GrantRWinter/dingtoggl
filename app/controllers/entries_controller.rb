@@ -8,12 +8,6 @@ class EntriesController < ApplicationController
     end
   end
 
-  
-
-  # def new
-  #   @entries = current_user.entries.build
-  # end
-
   def create
     new_params = entry_params
     new_params[:user_id] = current_user.id
