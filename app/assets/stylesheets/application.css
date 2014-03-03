@@ -21,6 +21,14 @@
   position: relative;
 }
 
+.form-control {
+  border-radius: 0px;
+}
+
+.input-group .form-control:last-child, .input-group-addon:last-child, .input-group-btn:last-child>.btn, .input-group-btn:last-child>.btn-group>.btn, .input-group-btn:last-child>.dropdown-toggle, .input-group-btn:first-child>.btn:not(:first-child), .input-group-btn:first-child>.btn-group:not(:first-child)>.btn {
+  border-radius: 10px;
+}
+
 
 
 .marquis {
@@ -78,7 +86,7 @@ h3 {
 }
 
 .app-background {
-  background-color: #e0eece;
+  background-color: #B6F2F2;
 }
 
 .time {
@@ -113,7 +121,7 @@ h3 {
 }
 
 .navbar-default {
-background-color: #cfd27d;
+background-color: #049DBF;
 }
 
 @-webkit-keyframes fadeInRight {

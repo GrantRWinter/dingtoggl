@@ -67,11 +67,15 @@
 	  <hr/>
 	  
 	  <div class="row">
-      <div class="col-lg-4 col-lg-offset-4">
-  	  	<p>
-          Select date Range: From <input  type="date" ng-model="from_date" />
-  	  		To <input style='display:inline;' type="date" ng-model="to_date" />
-  	  	</p>
+      <div class="col-lg-8 col-lg-offset-1">
+  	  	<span>Select date Range:</span>
+        <div class="input-group input-group-lg form-field col-lg-2">
+          From <input class="form-control" type="date" ng-model="from_date" />
+        </div>
+        <div class="input-group input-group-lg form-field col-lg-2">
+  	  		To <input class="form-control" style='display:inline;' type="date" ng-model="to_date" />
+        </div>  
+  	  </div>
   	</div>
 
     
@@ -96,16 +100,21 @@
           </div>
 
           <div class="input-group input-group-lg form-field col-lg-2">  
-		    		<input class="form-control" type="text" 		ng-model="entry.comment" />   
+		    		<input class="form-control" type="text" ng-model="entry.comment" />   
 		    	</div>
 
-		    	<div class="input-group input-group-lg form-field col-lg-1">
-		    	 <input class="form-control btn btn-default btn-lg" type="submit" value="Save" ng-click="entry.$update()" /> 
-		    	 </div>
+		    	<div class="input-group input-group-lg form-field ">
+		    	 <button class="btn btn-success btn-lg form-control" value="Save" ng-click="entry.$update()">
+           <span class="glyphicon glyphicon-ok"></span>
+           </button>
+		    	</div>
 
-          <div class="input-group input-group-lg form-field col-lg-1">
-             <input class="form-control btn btn-default btn-lg" type="submit" value="Delete" ta-confirmatron="Are you sure?" ng-click="$parent.delete(entry, $index)" />
+          <div class="input-group input-group-lg form-field">
+            <button class="btn btn-danger btn-lg form-control" ta-confirmatron="Are you sure?" ng-click="$parent.delete(entry, $index)">
+              <span class="glyphicon glyphicon-remove"></span>
+            </button>
           </div>
+        
 	    	</div>	    
 	  </div>
 	</div>	
