@@ -38,8 +38,17 @@
   float:left;
   margin-right: 50px;
   height: 100px;
+}
+
+.nav-title {
+  position: relative;
   display: inline-block;
-  margin-top:3.5%;
+}
+
+.nav-image {
+  position: relative;
+  display: inline-block;
+  margin-bottom:35px;
 }
 
 .animated{

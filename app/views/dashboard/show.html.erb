@@ -2,14 +2,13 @@
 	<div ng-controller="EntriesCtrl">
 	  <nav class="navbar navbar-default navbar-color" role="navigation">
       <div class="container-fluid">
-        <div class="navbar-header">
-          
-        </div>
-      
-      <h1 class="title animated rotateInDownLeft">{{ view.title }}</h1>
-      <img class="clock-tower animated fadeInRight" src="/assets/clockTower_logo.png" />
-      
-      
+        
+      <div class="nav-title">
+        <h1 class="title animated rotateInDownLeft">{{ view.title }}</h1>
+      </div>
+      <div class="nav-image">
+        <img class="clock-tower animated fadeInRight" src="/assets/clockTower_logo.png" />
+      </div>
       </div>
       
     </nav>
@@ -68,11 +67,11 @@
 	  
 	  <div class="row">
       <div class="col-lg-8 col-lg-offset-1">
-  	  	<p>Select date Range:</p>
-        <div class="input-group input-group-lg form-field col-lg-2">
+  	  	<p>Select by date:</p>
+        <div class="input-group input-group-lg form-field col-lg-3">
           From <input class="form-control" type="date" ng-model="from_date" />
         </div>
-        <div class="input-group input-group-lg form-field col-lg-2">
+        <div class="input-group input-group-lg form-field col-lg-3">
   	  		To <input class="form-control" style='display:inline;' type="date" ng-model="to_date" />
         </div>  
   	  </div>
@@ -82,7 +81,7 @@
 
 	  <div class="row" ng-repeat="entry in view.entries | orderBy: 'created_at':true | filter:dateFilter">
 	    <div class="input-group input-group-lg form-field col-lg-2 col-lg-offset-1"> 
-		    		<input class="form-control" type="text" class="form_control" ng-model="entry.date" />
+		    		<input class="form-control" type="date" class="form_control" ng-model="entry.date" />
           </div>
 
           <div class="input-group input-group-lg form-field col-lg-1">
