@@ -7,7 +7,7 @@
         </div>
       
       <h1 class="title animated rotateInDownLeft">{{ view.title }}</h1>
-      <img class="clock-tower animated fadeInRight" src="/assets/clocktower.gif" />
+      <img class="clock-tower animated fadeInRight" src="/assets/clockTower_logo.png" />
       
       
       </div>
@@ -40,24 +40,24 @@
 
   		  <div class="input-group input-group-lg form-field col-lg-1">
   		  	 <h3>Hours: </h3>
-  		  	 <input type="number" class="form-control" min="0" max="8" placeholder="0" ng-model="view.newEntry.hours" /> 
+  		  	 <input type="number" class="form-control" ng-init="view.newEntry.hours=0" min="0" max="8"  ng-model="view.newEntry.hours" /> 
   		  </div>
 
   		  <div class="input-group input-group-lg form-field col-lg-1">
   		  	<h3>Minutes:</h3> 
-  		  	<input type="number" class="form-control bfh-number" min="0" max="59" placeholder="0" ng-model="view.newEntry.minutes" />
+  		  	<input type="number" class="form-control bfh-number" ng-init="view.newEntry.minutes=0" min="0" max="59"  ng-model="view.newEntry.minutes" />
   		  </div>
 
   		  <div class="input-group input-group-lg form-field col-lg-3">
   		  	<h3>Project:</h3> 
-  		  	<input type="text" value="stuff and such" class="form-control" ng-init="view.newEntry.project='TA'" ng-model="view.newEntry.project" /> 
+  		  	<input type="text" class="form-control" ng-init="view.newEntry.project='Teaching assistant'" ng-model="view.newEntry.project" /> 
   		  </div>
 
         <div class="input-group input-group-lg form-field col-lg-2">
           <h3>Comment: </h3>
-          <input type="text" class="form-control" placeholder="I love this job" ng-model="view.newEntry.comment" /> 
+          <input type="text" class="form-control" ng-init="view.newEntry.comment='I get paid for this?'" placeholder="I love this job" ng-model="view.newEntry.comment" /> 
         </div>
-  		  <div class="input-group input-group-lg form-field col-lg-1">
+  		  <div class="input-group input-group-lg form-field ">
   		  	<h3>Save: </h3>
   		  	<input  type="submit" class="form-control btn btn-primary btn-lg " value="Add Entry" />
   		  </div>
@@ -68,7 +68,7 @@
 	  
 	  <div class="row">
       <div class="col-lg-8 col-lg-offset-1">
-  	  	<span>Select date Range:</span>
+  	  	<p>Select date Range:</p>
         <div class="input-group input-group-lg form-field col-lg-2">
           From <input class="form-control" type="date" ng-model="from_date" />
         </div>
@@ -81,9 +81,7 @@
     
 
 	  <div class="row" ng-repeat="entry in view.entries | orderBy: 'created_at':true | filter:dateFilter">
-	    <div class="col-md-10 col-md-offset-1">
-				<div class="row">
-          <div class="input-group input-group-lg form-field col-lg-2 col-lg-offest-1"> 
+	    <div class="input-group input-group-lg form-field col-lg-2 col-lg-offset-1"> 
 		    		<input class="form-control" type="text" class="form_control" ng-model="entry.date" />
           </div>
 
@@ -95,7 +93,7 @@
 		    		<input class="form-control" min="0" max="59" type="number" ng-model="entry.minutes" />
           </div> 
 
-          <div class="input-group input-group-lg form-field col-lg-2"> 
+          <div class="input-group input-group-lg form-field col-lg-3"> 
 		    		<input class="form-control" type="text"	ng-model="entry.project" />
           </div>
 
@@ -104,18 +102,17 @@
 		    	</div>
 
 		    	<div class="input-group input-group-lg form-field ">
-		    	 <button class="btn btn-success btn-lg form-control" value="Save" ng-click="entry.$update()">
+		    	 <button class="btn btn-success btn-lg form-control" type="submit" ta-confirmatron="Record updated"  ng-click="entry.$update()">
            <span class="glyphicon glyphicon-ok"></span>
            </button>
 		    	</div>
 
           <div class="input-group input-group-lg form-field">
-            <button class="btn btn-danger btn-lg form-control" ta-confirmatron="Are you sure?" ng-click="$parent.delete(entry, $index)">
+            <button class="btn btn-danger btn-lg form-control" type="submit" ta-confirmatron="Are you sure?" ng-click="$parent.delete(entry, $index)">
               <span class="glyphicon glyphicon-remove"></span>
             </button>
           </div>
         
 	    	</div>	    
-	  </div>
-	</div>	
+	 	
 </div>
