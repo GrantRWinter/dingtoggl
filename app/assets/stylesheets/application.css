@@ -25,6 +25,9 @@
   border-radius: 0px;
 }
 
+.date-picker {
+  margin-bottom: 30px;
+}
 .input-group .form-control:last-child, .input-group-addon:last-child, .input-group-btn:last-child>.btn, .input-group-btn:last-child>.btn-group>.btn, .input-group-btn:last-child>.dropdown-toggle, .input-group-btn:first-child>.btn:not(:first-child), .input-group-btn:first-child>.btn-group:not(:first-child)>.btn {
   border-radius: 10px;
 }
@@ -51,12 +54,19 @@
   margin-bottom:35px;
 }
 
-.animated{
-  -webkit-animation-duration: 1s;
-}
+
 
 h1, h2, h3, p{
   font-family: "Arial Rounded MT Bold";
+}
+
+tr, th{
+  1.5 em;
+  text-align: center;
+}
+
+.date-picker-small-text {
+  margin-bottom: 0px;
 }
 
 
@@ -122,6 +132,27 @@ h1, h2, h3, p{
 
 .navbar-default {
 background-color: #049DBF;
+}
+
+.footer {
+  height: 50px;
+}
+
+.footer-text1 {
+  margin-bottom: 0px;
+  float: left;
+  display: inline-block;
+}
+
+.footer-text2 {
+  margin-bottom: 0px;
+  float: right;
+  display: inline-block;
+}
+/* header animations*/
+
+.animated{
+  -webkit-animation-duration: 1s;
 }
 
 @-webkit-keyframes fadeInRight {

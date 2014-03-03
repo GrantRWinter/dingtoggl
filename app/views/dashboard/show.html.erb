@@ -10,7 +10,6 @@
         <img class="clock-tower animated fadeInRight" src="/assets/clockTower_logo.png" />
       </div>
       </div>
-      
     </nav>
 
 	  <div class="row">
@@ -65,53 +64,62 @@
 
 	  <hr/>
 	  
-	  <div class="row">
-      <div class="col-lg-8 col-lg-offset-1">
-  	  	<p>Select by date:</p>
-        <div class="input-group input-group-lg form-field col-lg-3">
-          From <input class="form-control" type="date" ng-model="from_date" />
-        </div>
-        <div class="input-group input-group-lg form-field col-lg-3">
-  	  		To <input class="form-control" style='display:inline;' type="date" ng-model="to_date" />
-        </div>  
-  	  </div>
+	  <div class="row date-picker">
+  	  <h3 class="col-lg-3 col-lg-offset-1">select by date range:</h3>
+      <div class="input-group input-group-lg form-field col-lg-2 ">
+        <p class="date-picker-small-text">From</p> <input class="form-control" type="date" ng-model="from_date" />
+      </div>
+      <div class="input-group input-group-lg form-field col-lg-2">
+  	  	<p class="date-picker-small-text">To</p> <input class="form-control" style='display:inline;' type="date" ng-model="to_date" />
+      </div>  
   	</div>
-
-    
 
 	  <div class="row" ng-repeat="entry in view.entries | orderBy: 'created_at':true | filter:dateFilter">
 	    <div class="input-group input-group-lg form-field col-lg-2 col-lg-offset-1"> 
-		    		<input class="form-control" type="date" class="form_control" ng-model="entry.date" />
-          </div>
+		    <input class="form-control" type="date" class="form_control" ng-model="entry.date" />
+      </div>
 
-          <div class="input-group input-group-lg form-field col-lg-1">
-		    		<input class="form-control" min="0" max="8" type="number" ng-model="entry.hours" />
-          </div>
+      <div class="input-group input-group-lg form-field col-lg-1">
+    		<input class="form-control" min="0" max="8" type="number" ng-model="entry.hours" />
+      </div>
 
-          <div class="input-group input-group-lg form-field col-lg-1">
-		    		<input class="form-control" min="0" max="59" type="number" ng-model="entry.minutes" />
-          </div> 
+      <div class="input-group input-group-lg form-field col-lg-1">
+    		<input class="form-control" min="0" max="59" type="number" ng-model="entry.minutes" />
+      </div> 
 
-          <div class="input-group input-group-lg form-field col-lg-3"> 
-		    		<input class="form-control" type="text"	ng-model="entry.project" />
-          </div>
+      <div class="input-group input-group-lg form-field col-lg-3"> 
+    		<input class="form-control" type="text"	ng-model="entry.project" />
+      </div>
 
-          <div class="input-group input-group-lg form-field col-lg-2">  
-		    		<input class="form-control" type="text" ng-model="entry.comment" />   
-		    	</div>
+      <div class="input-group input-group-lg form-field col-lg-2">  
+    		<input class="form-control" type="text" ng-model="entry.comment" />   
+    	</div>
 
-		    	<div class="input-group input-group-lg form-field ">
-		    	 <button class="btn btn-success btn-lg form-control" type="submit" ta-confirmatron="Record updated"  ng-click="entry.$update()">
-           <span class="glyphicon glyphicon-ok"></span>
-           </button>
-		    	</div>
+    	<div class="input-group input-group-lg form-field ">
+    	 <button class="btn btn-success btn-lg form-control" type="submit" ta-confirmatron="Record updated"  ng-click="entry.$update()">
+       <span class="glyphicon glyphicon-ok"></span>
+       </button>
+    	</div>
 
-          <div class="input-group input-group-lg form-field">
-            <button class="btn btn-danger btn-lg form-control" type="submit" ta-confirmatron="Are you sure?" ng-click="$parent.delete(entry, $index)">
-              <span class="glyphicon glyphicon-remove"></span>
-            </button>
-          </div>
-        
-	    	</div>	    
-	 	
+      <div class="input-group input-group-lg form-field">
+        <button class="btn btn-danger btn-lg form-control" type="submit" ta-confirmatron="Are you sure?" ng-click="$parent.delete(entry, $index)">
+          <span class="glyphicon glyphicon-remove"></span>
+        </button>
+      </div>
+  	</div>
+
+    <hr>
+
+    <footer class="footer">
+      <div class="row">
+        <div class="col-lg-2 col-lg-offset-1">
+          <p class="footer-text1 "></p>
+        </div>
+        <div class="col-lg-2 col-lg-offset-10">
+          <p class="footer-text1">Built in a Lighthouse By Tom and Grant</p>
+        </div>
+      </div>
+      
+    </footer>
+  </div>  	    
 </div>
