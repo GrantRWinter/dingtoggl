@@ -9,8 +9,8 @@
     <div class="col-lg-4">
       <h1 class="marquis title animated rotateInDownLeft">Clocktower</h1>
     </div>
-    <div class="col-lg-4 enter-box">
-      <h1>Kiss your evenings goodbye T.A. slave!</h1>
+    <div class="col-lg-5 enter-box">
+      <h1>Welcome to the big bucks hotshot!</h1>
         <%= form_for @user do |f| %>
           <% if @user.errors.any? %>
             <div class="error_messages">
@@ -22,13 +22,13 @@
               </ul>
             </div>
           <% end %>
-        <div class="field form-field">
+        <div>
           <div class="field form-group">
             <%= f.label :email %>
             <%= f.text_field :email, :class => "form-control" %>
           </div>
           <div class="field form-group">
-            <%= f.label :password %>
+            <%= f.label :password %> (between 6 and 10 characters)
             <%= f.password_field :password, :class => "form-control" %>
           </div>
           <div class="field form-group">
