@@ -14,15 +14,15 @@
 
 	  <div class="row">
   	  <div class="col-lg-2 col-lg-offset-2 time-box">
-  	  	<h3 class="time-box-text">hours today</h3>
+  	  	<h3 class="time-box-text">hrs today</h3>
   	  	<h1 class="time">{{ total_today() }}</h1>
   	  </div>
       <div class="col-lg-2 col-lg-offset-1 time-box">
-        <h3 class="time-box-text">hours to date</h3>
+        <h3 class="time-box-text">hrs to date</h3>
         <h1 class="time">{{ total() }}</h1>
       </div>
   	  <div class="col-lg-2 col-lg-offset-1 time-box">
-  	  	<h3 class="time-box-text">hours his week</h3>
+  	  	<h3 class="time-box-text">hrs this week</h3>
   	  	<h1 class="time">{{ total_week() }}</h1>
   	  </div>
     </div>
@@ -43,12 +43,12 @@
 
   		  <div class="input-group input-group-lg form-field col-lg-1">
   		  	<h3>Minutes:</h3> 
-  		  	<input type="number" class="form-control bfh-number" ng-init="view.newEntry.minutes=0" min="0" max="59"  ng-model="view.newEntry.minutes" />
+  		  	<input type="number" class="form-control bfh-number" ng-init="view.newEntry.minutes=0" required min="0" max="59"  ng-model="view.newEntry.minutes" />
   		  </div>
 
   		  <div class="input-group input-group-lg form-field col-lg-3">
   		  	<h3>Project:</h3> 
-  		  	<input type="text" class="form-control" ng-init="view.newEntry.project='Teaching assistant'" ng-model="view.newEntry.project" /> 
+  		  	<input type="text" class="form-control" ng-init="view.newEntry.project='Teaching assistant'" required ng-model="view.newEntry.project" /> 
   		  </div>
 
         <div class="input-group input-group-lg form-field col-lg-2">

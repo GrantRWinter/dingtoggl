@@ -19,9 +19,22 @@ timeApp.controller("EntriesCtrl", ['$scope', '$resource', function entriesCtrl($
   view.newEntry = {};	
 
 	$scope.addEntry = function addEntry() {
-		entryResource.save(view.newEntry);
-		view.entries.push(view.newEntry);
-		view.newEntry = {};
+		
+		var res = entryResource.save(view.newEntry);
+	
+		res.$promise.then(function(entry)
+		{
+			console.log("success", arguments);
+		})
+		.catch(function(error)
+		{
+		})
+		.finally(function()
+		{
+	  	view.entries.push(res);
+		});
+		
+		view.newEntry = {};	
 	};
 
 	
@@ -67,7 +80,6 @@ timeApp.controller("EntriesCtrl", ['$scope', '$resource', function entriesCtrl($
 				totalHours = totalHours + view.entries[i].hours;
 			}
 		}
-		
 		return totalHours;
 	};
 
@@ -100,11 +112,25 @@ timeApp.controller("EntriesCtrl", ['$scope', '$resource', function entriesCtrl($
  
 
 
-	$scope.save = function save(entry)
-	{
-		console.log(entry);
-		entry.$save();
-	}
+	// $scope.save = function save(entry)
+	// {
+	// 	console.log(entry);
+	// 	var res = entry.$save();
+	// 	res
+	// 	.then(function(entry)
+	// 	{
+	// 		console.log("success", arguments);
+	// 	})
+	// 	.catch(function(error)
+	// 	{
+
+	// 	})
+	// 	.finally(function()
+	// 	{
+	// 		view.entries = entryResource.query();
+	// 	});
+	// 	debugger
+	// }
 
 	$scope.delete = function(entry, idx)
 	{
